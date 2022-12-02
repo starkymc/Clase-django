@@ -82,9 +82,9 @@ WSGI_APPLICATION = 'GestionTareas.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'gestiontareas',
-        'USER': 'root',
-        'PASSWORD': '1234',
+        'NAME': 'basedatos',
+        'USER': 'usuario',
+        'PASSWORD': 'pass',
         'HOST': 'localhost',
         'PORT': '3306'
     }
