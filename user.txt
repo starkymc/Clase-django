@@ -1,0 +1,7 @@
+user: gian
+email: gian@gmail.com
+pass: yolex@a#
+
+user: admin
+email: admin@admin.com
+pass: yolex@a#

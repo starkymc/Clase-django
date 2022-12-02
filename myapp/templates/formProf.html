@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Formulario Profesor</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body>
+        
+        <!-- centrar el div-->
+        <div class="flex items-center justify-center h-screen bg-slate-900">
+        
+        <!-- tamaño del form -->    
+        <div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm">
+            <!-- Inicio del form -->
+            <form action="" method="post">
+                {% csrf_token %}
+                
+              <!-- inicio columna first_name -->  
+              <div class="form-group mb-6 ">
+                <h2 class="text-3xl  font-bold mb-5 ">Formulario Profesor</h2>
+                <label class="form-label inline-block mb-2 text-gray-700 ">{{ form.first_name.label}}</label>
+                <input type="text" name="first_name" required id="id_first_name" class="form-control 
+                  block
+                  w-full
+                  px-3
+                  py-1.5
+                  text-base
+                  font-normal
+                  text-gray-700
+                  bg-white bg-clip-padding
+                  border border-solid border-gray-300
+                  rounded
+                  transition
+                  ease-in-out
+                  m-0
+                  focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInputEmail1"
+                  aria-describedby="nameHelp" placeholder="Ingresa tu primer nombre">
+              </div>
+              <!-- final columna first_name -->
+
+              <!-- columna last_name -->
+              <div class="form-group mb-6">
+                <label for="exampleInputPassword1" class="form-label inline-block mb-2 text-gray-700">{{ form.last_name.label}}</label>
+                <input type="text" name="last_name" required id="id_last_name" class="form-control block
+                  w-full
+                  px-3
+                  py-1.5
+                  text-base
+                  font-normal
+                  text-gray-700
+                  bg-white bg-clip-padding
+                  border border-solid border-gray-300
+                  rounded
+                  transition
+                  ease-in-out
+                  m-0
+                  focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" 
+                  placeholder="Ingresa tu apellido">
+              </div>
+              <!-- final columna last_name -->
+
+              <!-- columna salario -->
+              <div class="form-group mb-6">
+                <label for="exampleInputPassword1" class="form-label inline-block mb-2 text-gray-700">{{ form.salario.label}}</label>
+                <input type="number" name="salario" required id="id_salario" class="form-control block w-full px-3
+                  py-1.5
+                  text-base
+                  font-normal
+                  text-gray-700
+                  bg-white bg-clip-padding
+                  border border-solid border-gray-300
+                  rounded
+                  transition
+                  ease-in-out
+                  m-0
+                  focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" 
+                  >
+              </div>
+              <!-- final columna salario -->
+
+              <!-- inicio boton -->
+              <button type="submit" class="
+                px-6
+                py-2.5
+                bg-blue-600
+                text-white
+                font-medium
+                text-xs
+                leading-tight
+                uppercase
+                rounded
+                shadow-md
+                hover:bg-blue-700 hover:shadow-lg
+                focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0
+                active:bg-blue-800 active:shadow-lg
+                transition
+                duration-150
+                ease-in-out">
+                Submit
+              </button>
+                <!-- final boton -->
+
+            </form>
+            <!-- fin del form -->
+          </div>
+          <!-- fin del div tamaño del form -->    
+        </div>
+        <!-- fin del centrado de todo el div -->    
+    </body>
+</html>
