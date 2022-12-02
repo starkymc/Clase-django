@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soy TemplateView</title>
+</head>
+<body>
+    <h1>El titulo del libro es: {{ title | upper}}</h1>
+    <h1>El titulo del libro es: {{ title | lower | slice:':5'}}</h1>
+    <h2>El primer elemento es {{ list | first }}</h2>
+    <h2>El nombre de la persona es {{ diccionario.first_name }} {{ diccionario.last_name }}</h2>
+    
+    {% if 1 == 1 %}
+        <h2>La fecha de hoy es: {% now 'Y-m-d' %}</h2>
+    {% endif %}
+
+
+    <ul>
+        {% for i in list  %}
+        <li>{{ i }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

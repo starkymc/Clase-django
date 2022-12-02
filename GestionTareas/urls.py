@@ -17,8 +17,14 @@ from django.contrib import admin
 from django.urls import path
 
 from myapp.views import (
-    index_view, vista1, vista2, form_view, aula_view, formAlum,showAlum,formProf,showProf)
+    index_view, vista1, vista2, form_view, aula_view, 
+    formAlum,showAlum,formProf,showProf, NoTemplate,TemplateView,
+    Otro)
 
+from vitrina.views import (
+    BookList,
+    BootstrapEj
+)
 
 
 urlpatterns = [
@@ -31,5 +37,10 @@ urlpatterns = [
     path('formAlum/', formAlum.as_view(), name='formAlum'),
     path('formAlum/<nalumno>', showAlum.as_view(), name='showAlum'),
     path('formProf/', formProf.as_view(), name='formProf'),
-    path('formProf/<nombre>', showProf.as_view(), name='showProf')
+    path('formProf/<nombre>', showProf.as_view(), name='showProf'),
+    path('NoTemplate/', NoTemplate.as_view(), name='NoTemplate'),
+    path('TemplateView/', TemplateView.as_view(), name='TemplateView'),
+    path('Otro/', Otro.as_view(), name='Otro'),
+    path('booklist/', BookList.as_view(), name='booklist'),
+     path('bootstrapej/', BootstrapEj.as_view(), name='bootstrapej')
 ]

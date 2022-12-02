@@ -1,0 +1,80 @@
+{% extends 'basevitrina.html' %}
+
+{% block title %}
+ {{ block.super }}
+{% endblock  %}
+
+
+
+{% block content %}
+
+<div class="table-responsive-md">
+<table class="table" style="margin-left: 0">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col" style="text-align: center;">ID</th>
+        <th scope="col" style="text-align: center;">Lenguaje</th>
+        <th scope="col" style="text-align: center;">Titulo</th>
+        <th scope="col" style="text-align: center;">Tamaño del Autor</th>
+        <th scope="col" style="text-align: center;">Editorial</th>
+        <th scope="col" style="text-align: center;">Reseñas</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+
+        {# usando bucle for #}
+        {% for i in object_list  %}
+        <th scope="row" >{{i.id}}</th>
+
+        {# usando filtro #}
+        {% filter upper %}
+            {% if i.language_code == 'eng' or i.language_code == 'eng-US' or i.language_code == 'en-CA' or i.language_code == 'en-GB' %}
+                <td style="text-align: center;">🇺🇸 🇬🇧 ({{i.language_code}})</td>
+            {% else %}
+                <td style="text-align: center;"> "  "</td>
+            {% endif %} 
+                <td style="text-align: center;"> 🧙 {{i.title}} </td>
+        {% endfilter %}
+        {# fin del filtro #}
+        
+        {# usando filtro if #}
+        {% if i.authors|length <= 30 %}
+            <td style="text-align: center;"> {{ i.authors|length}}</td>
+        {% else %}
+            <td style="text-align: center;"> "  "</td>
+        {% endif %}
+        {# fin del filtro if #}
+
+        {# usando filtro if #}
+        {% if i.publisher|length <= 20 %}
+            <td style="text-align: center;"> {{i.publisher|slice:'20'}} </td>
+        {% else %}
+        <td style="text-align: center;"> "  " </td>
+        {% endif %}
+       
+        {# usando filtro if #}
+        {% if i.text_reviews_count < 500  %}
+            <td style="text-align: center;"> ⭐ {{ i.text_reviews_count }}</td>
+        {% elif i.text_reviews_count <= 1000 %}    
+            <td style="text-align: center;"> ⭐⭐ {{ i.text_reviews_count }}</td>
+        {% elif i.text_reviews_count <= 2000 %}    
+            <td style="text-align: center;"> ⭐⭐⭐ {{ i.text_reviews_count }}</td>
+        {% elif i.text_reviews_count <= 3000 %}    
+            <td style="text-align: center;"> ⭐⭐⭐⭐ {{ i.text_reviews_count }}</td>
+        {% elif i.text_reviews_count == '0' %}
+        {% else %}
+            <td style="text-align: center;"> "  " </td>
+        {% endif %}
+        {# fin del filtro if #}
+
+      </tr>
+    </tbody>
+    {% endfor %}
+    {# fin del bucle for #}
+  </table>
+</div>
+
+
+
+  {% endblock  %}
